@@ -4,14 +4,14 @@ from PIL import ImageTk
 import tkinter
 
 class VideoStream:
-    root = None
-    panel = None
-    camera = None
+    # root = None
+    # panel = None
+    # camera = None
 
     def __init__(self):
         self.root = tkinter.Tk()
         self.root.title('videa stream')
-        self.root.geometry('400x400')
+        # self.root.geometry('400x400')
         # self.destructor function gets fired when the window is closed
         self.root.protocol('WM_DELETE_WINDOW', self.destructor)
         # make Esc exit the program
@@ -26,7 +26,7 @@ class VideoStream:
 
     def cameraToPanel(self):
         _, img = self.camera.read()
-        img = cv2.resize(img, (400, 400) )
+        # img = cv2.resize(img, (400, 400) )
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         # print(img.shape)
         img = Image.fromarray(img)
